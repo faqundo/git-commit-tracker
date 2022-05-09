@@ -13,12 +13,12 @@ export class AppController {
 
   
   @Get('/commits')
-  @Header('Authentication','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')
+  @Header('Authentication',process.env.TOKENS)
   getAllCommits(){
     
-    const url = 'https://api.github.com/repos/faqundo/git-commit-tracker/commits';
-    //const url = env("BASE_URL") + '/repos/';
-
+    //const url = 'https://api.github.com/repos/faqundo/git-commit-tracker/commits';
+    const url = process.env.BASE_URL + '/repos/' + process.env.OWNER + "/" + process.env.REPO +'/commits';
+    console.log('url',url)
     return this.httpService
       .get(url )
       .pipe(
