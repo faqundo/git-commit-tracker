@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div>main</div>
+    <div class="pb-2">
+      <button type="button" class="btn btn-secondary">main</button>
+    </div>
     <div>
       <ul class="list-group table-hover">
         <li
@@ -62,7 +64,13 @@
               target="_blank"
               style="text-decoration: none"
             >
-              <button type="button" class="btn btn-secondary btn-sm">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                data-bs-toggle="tooltip"
+                data-bs-placement="left"
+                title="View commit details"
+              >
                 <span style="color: #58a6ff">
                   {{ oneCommit.sha.substr(0, 7) }}
                 </span>
