@@ -4,6 +4,7 @@
 Execute the following command to execute backend project
 ## QUICK START BACKEND
 cd .\backend\
+copy .env.example for create a new .env 
 npm install
 npm run start:dev
 ## Installation
