@@ -16,13 +16,22 @@
           <div>
             <!-- Commit name -->
             <p class="mb-1">
-              <b>{{ oneCommit.commit.message }}</b> /
+              <a
+                :href="oneCommit.html_url"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                <b class="text-white">{{ oneCommit.commit.message }}</b>
+              </a>
             </p>
 
             <div class="d-flex mt-1">
               <!-- Avatar -->
               <div>
-                <a :href="'https://github.com/' + oneCommit.author.login" target="_blank">
+                <a
+                  :href="'https://github.com/' + oneCommit.author.login"
+                  target="_blank"
+                >
                   <img
                     :src="oneCommit.author.avatar_url"
                     :alt="'@' + oneCommit.commit.author.name"
@@ -37,13 +46,13 @@
                 <a
                   :href="'https://github.com/' + oneCommit.author.login"
                   target="_blank"
-                  style="text-decoration: none; color: white"
-                  class="px-2"
+                  style="text-decoration: none"
+                  class="px-2 text-white"
                 >
                   <b>{{ oneCommit.commit.author.name }}</b>
                 </a>
                 <!-- Date -->
-                <time> {{ oneCommit.commit.author.date }}/ </time>
+                <time> {{ oneCommit.commit.author.date }} </time>
               </div>
             </div>
           </div>
@@ -90,7 +99,7 @@ export default defineComponent({
     async loadCommits() {
       try {
         const res = await getCommits();
-        this.commits = res.data; 
+        this.commits = res.data;
       } catch (error) {
         console.error(error);
       }
