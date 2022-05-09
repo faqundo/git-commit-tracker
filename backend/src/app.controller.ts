@@ -16,7 +16,7 @@ export class AppController {
   @Header('Authentication','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')
   getAllCommits(){
     
-    const url = 'https://api.github.com/repos/faqundo/NestJS-Udemy-Course/commits';
+    const url = 'https://api.github.com/repos/faqundo/git-commit-tracker/commits';
     //const url = env("BASE_URL") + '/repos/';
 
     return this.httpService
