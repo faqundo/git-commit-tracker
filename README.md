@@ -9,6 +9,9 @@ The frontend was built with vuejs (Javascript framework).
 
 Both using typescript and axios.
 
+Frontend run in: http://localhost:8080/
+Backend run in: http://localhost:3000/
+
 # Backend with Nest & Typescript
 ## Installation of the backend project
 
