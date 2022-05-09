@@ -1,3 +1,14 @@
+# Git commit tracker app
+
+Description: 
+
+This application is divided into two parts because this way we have a fully scalable and independent backend and frontend.
+
+The backend was built on nestjs (Node framework).
+The frontend was built with vuejs (Javascript framework).
+
+Both using typescript and axios.
+
 # Backend with Nest & Typescript
 ## Installation of the backend project
 
