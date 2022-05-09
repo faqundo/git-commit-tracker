@@ -13,15 +13,16 @@
           v-for="(oneCommit, index) in commits"
           :key="index"
         >
-          <!-- @click="this.$router.push(`/tasks/${task._id}`)" -->
           <div>
+            <!-- Commit name -->
             <p class="mb-1">
               <b>{{ oneCommit.commit.message }}</b> /
             </p>
 
             <div class="d-flex mt-1">
+              <!-- Avatar -->
               <div>
-                <a :href="oneCommit.author.url" target="_blank">
+                <a :href="'https://github.com/' + oneCommit.author.login" target="_blank">
                   <img
                     :src="oneCommit.author.avatar_url"
                     :alt="'@' + oneCommit.commit.author.name"
@@ -32,21 +33,23 @@
                 </a>
               </div>
               <div>
+                <!-- Author name -->
                 <a
-                  :href="oneCommit.author.url"
+                  :href="'https://github.com/' + oneCommit.author.login"
                   target="_blank"
                   style="text-decoration: none; color: white"
                   class="px-2"
                 >
                   <b>{{ oneCommit.commit.author.name }}</b>
                 </a>
+                <!-- Date -->
                 <time> {{ oneCommit.commit.author.date }}/ </time>
               </div>
             </div>
           </div>
           <div class="d-flex justify-content-end">
             <a
-              :href="oneCommit.url"
+              :href="oneCommit.html_url"
               target="_blank"
               style="text-decoration: none"
             >
