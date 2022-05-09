@@ -12,6 +12,24 @@ export class AppController {
   ) { }
 
   
+  @Get('/commits')
+  getAllCommits(){
+    
+    const url = 'https://api.github.com/repos/faqundo/NestJS-Udemy-Course/commits';
+    //const url = env("BASE_URL") + '/repos/';
+
+    return this.httpService
+      .get(url )
+      .pipe(
+        map((res: AxiosResponse) => {
+          return res.data
+        }),
+        catchError((err) => {
+          return of(err)
+        }),
+    );
+  }
+
   @Get()
   getHello(): string {
     return this.appService.getHello();
